@@ -2,7 +2,9 @@
 a wavFile compressor and decompressor
 
 .WAV file compression
+
 Implement method
+
 a) read the .WAV file
 This part is same as Project 1. The big idea is that we parse the .WAV header first to get the basic information of the file, after that, we store the samples information to two arrays as our left channel and right channel.
 A normal .wav header usually has a length of 44 or 46 bytes, but it is not always true. The right method to get the header length is to read the size of each chunk and then jump to the next chunk until reach the data chunk. All the data after dataSize will the real sound data. dataSize*8/BitsPerSample will give the total number of samples in the file. ByteRate*8/BitsPerSample will give the sampling rate.
